@@ -6,7 +6,8 @@ docker run -d -p 8080:80 --name (container name) (name)
 docker-compose up 
 docker-compose down
 DEVOPS LAB EXTERNAL
-SET – 1
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////SET – 1
 1. Create an HTML registration form (username, password, confirm
 password) and upload it to GitHub.
 <html>
@@ -127,7 +128,7 @@ Save
 Build with parameters
 Build
 View console output
-SET – 2
+//////////////////////////////////////////////////////////////////////////////////////////////////SET – 2
 1. Create an HTML feedback/contact form and push it to GitHub.
 <html>
 <head>
@@ -307,7 +308,7 @@ echo "Deploy Stage"
 }
 }
 }
-SET – 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 3
 1. Create a Git branching story project where each branch adds a
 chapter and merge all into a final book.html.
 Step 1: Create Project Folder
@@ -444,7 +445,7 @@ kubectl get pods
 kubectl logs -l app=calc
 kubectl get deployments
 kubectl get svc
-SET – 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 4
 1. Build an HTML page with a profile card (photo, name,
 description) and push it to GitHub.
 <html>
@@ -612,7 +613,7 @@ driver.quit();
 }
 Selenium java client library https://www.selenium.dev/downloads/
 chrome driver https://googlechromelabs.github.io/chrome-for-testing/
-SET – 5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 5
 1. Develop an HTML page showing your favorite books/movies and
 push it to GitHub.
 <html>
@@ -669,7 +670,7 @@ COPY guess.py .
 CMD ["python", "guess.py"]
 docker build -t py-guess .
 docker run -it py-guess
-SET – 6
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 6
 1. Design an HTML Weekly Timetable and upload it to GitHub.
 <html>
 <head>
@@ -826,7 +827,7 @@ println "Current Date & Time: " + new Date()
 Enable Build periodically
 Enter schedule:
 H/2 * * * *
-SET – 7
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 7
 1. Create an HTML Resume page (Education, Skills, Projects) and
 push it.
 <html>
@@ -903,7 +904,7 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl get pods
 kubectl get svc
-SET – 8
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 8
 1. Create a simple HTML page to display tables and lists (any
 structure) and push it to GitHub.
 <html>
@@ -1024,7 +1025,7 @@ testCalculator();
 npm init -y
 npm install selenium-webdriver
 node test.js
-SET – 10
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 10
 1. Create an HTML page with a Pizza Order form and commit it to
 GitHub.
 <html>
@@ -1175,7 +1176,7 @@ TC4 Select a pizza size from dropdown
 TC5 Click a toppings checkbox
 Extra Validate button text
 Total used: 5 test cases
-SET – 9
+//////////////////////////////////////////////////////////////////////////////////////////////////////////SET – 9
 1. Build an HTML page with a gallery of 3–4 images with captions
 and upload it.
 <!DOCTYPE html>
@@ -1261,3 +1262,64 @@ Docker push kdeepthi6002/set9q1
 >kubectl apply -f service.yaml
 >kubectl get pods
 http://localhost:30083/
+package JavaApplication5;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class JavaApplication5 {
+
+    // Test Case 1: Open Registration Page
+    public void test_OpenPage(WebDriver driver) {
+        driver.get("file:///C:/Users/G.Sreeja%20Reddy/Downloads/register.html");
+        System.out.println("Page opened. Title: " + driver.getTitle());
+    }
+
+    // Test Case 2: Submit Empty Form
+    public void test_EmptyForm(WebDriver driver) {
+        driver.get("file:///C:/Users/G.Sreeja%20Reddy/Downloads/register.html");
+
+        driver.findElement(By.id("registerBtn")).click();
+
+        System.out.println("Empty form submitted. Error message should appear.");
+    }
+
+    // Test Case 3: Successful Registration
+    public void test_SuccessfulRegistration(WebDriver driver) {
+        driver.get("file:///C:/Users/G.Sreeja%20Reddy/Downloads/register.html");
+
+        driver.findElement(By.id("name")).sendKeys("Navadeep");
+        driver.findElement(By.id("email")).sendKeys("test@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("Test@123");
+        driver.findElement(By.id("confirmPassword")).sendKeys("Test@123");
+        driver.findElement(By.id("mobile")).sendKeys("9876543210");
+
+        driver.findElement(By.id("registerBtn")).click();
+
+        System.out.println("Registration completed successfully.");
+    }
+
+    // MAIN METHOD – runs all test cases
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.edge.driver",
+                "C:\\Users\\G.Sreeja Reddy\\Downloads\\msedgedriver.exe");
+
+        WebDriver driver = new EdgeDriver();
+        JavaApplication5 tests = new JavaApplication5();
+
+        try {
+           tests.test_OpenPage(driver);
+            //tests.test_EmptyForm(driver);
+           // tests.test_SuccessfulRegistration(driver);
+
+            Thread.sleep(60000);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            driver.quit();
+        }
+    }
+}
